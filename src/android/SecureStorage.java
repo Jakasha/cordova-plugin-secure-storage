@@ -211,12 +211,14 @@ public class SecureStorage extends CordovaPlugin {
     }
 
     private void unlockCredentials() {
-        cordova.getActivity().runOnUiThread(new Runnable() {
-            public void run() {
-                Intent intent = new Intent("com.android.credentials.UNLOCK");
-                startActivity(intent);
-            }
-        });
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
+            cordova.getActivity().runOnUiThread(new Runnable() {
+                public void run() {
+                    Intent intent = new Intent("com.android.credentials.UNLOCK");
+                    startActivity(intent);
+                }
+            });
+        }
     }
 
     private Context getContext() {
