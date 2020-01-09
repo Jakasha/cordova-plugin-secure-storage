@@ -1,3 +1,6 @@
+# Android 10
+Added Android Q - SDK API Level 29 fixes, in order to avoid the app crash on startup since it tries to call the 'com.android.credentials.UNLOCK' intent.
+
 # Project no longer mantained.
 
 As Crypho does not use Cordova for a long time now, it has become clear that we cannot keep maintaining this project any longer, or give it the attention it deserves.
